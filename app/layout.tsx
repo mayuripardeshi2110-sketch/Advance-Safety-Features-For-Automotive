@@ -54,6 +54,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
 }
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -64,6 +65,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${robotoMono.variable} font-sans antialiased`}>
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        <GoogleAnalytics gaId="G-48N5MRYKM6" />
       </body>
     </html>
   )
